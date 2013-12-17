@@ -1,0 +1,56 @@
+<head>
+	<title>Emotifeed</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Emotifeed">
+    <meta name="author" content="Advanced Interaction Lab.">
+</head>
+ 
+<body>
+		{{> page}}
+</body>
+
+<template name="page">
+	<!--<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div>
+				<center>
+					<h3 class="muted">Emotifeed</h3>
+				</center>
+			</div>
+		</div>
+	</div>-->
+
+	
+	{{#if is_vote}}
+		{{> vote}}
+	{{/if}}
+
+	{{#if is_logged}}
+		{{#if is_new_message}}
+			{{> new_message}}
+		{{/if}}
+		{{#if is_feedback}}
+			{{> feedback}}
+		{{/if}}
+		{{#if is_message_feedback}}
+			{{> message_feedback}}
+		{{/if}}
+		{{#if is_home}}
+			{{> home}}
+		{{/if}}
+	{{else}}
+		{{#if is_logged_needed}}
+			{{> auth}}
+		{{/if}}
+	{{/if}}
+
+	{{#if is_screen}}
+		{{> screen}}
+	{{/if}}
+	{{#if is_index}}
+		{{> index}}
+	{{/if}}
+	
+</template>
