@@ -34,4 +34,4 @@ Template.show_message_monitor.monitor_feelings = ->
 		if total * 100 != 0
 			{ label: monitor_feelings, percentage: message[monitor_feelings] / total * 100, qtd: message[monitor_feelings], total: total }
 		else
-			{ label: monitor_feelings, percentage: 0, qtd: message[monitor_feelings], total: total }
+			{ label: monitor_feelings, percentage: 0, qtd: 0, total: 0 }
