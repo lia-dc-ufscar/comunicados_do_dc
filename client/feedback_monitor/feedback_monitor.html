@@ -1,9 +1,8 @@
-<!-- Option 1 -->
-<template name="message_feedback">
+<template name="feedback_monitor">
 	<br/>
 
 	{{#if message}}
-		{{> show_message}}
+		{{> show_message_monitor}}
 	{{else}}
 		<p>Loading</p>
 	{{/if}}
@@ -18,7 +17,7 @@
 	<br/>
 </template>
 
-<template name="show_message">
+<template name="show_message_monitor">
 	<h1 align="center">Opiniões sobre o comunicado do dia {{{date}}}</h1>
 	<br />
 	<table width="85%" align="center">
@@ -28,7 +27,7 @@
 		<tr>
 			<td colspan="2" align="right"><p class="lead" style="font-size: 30px; text-align: justify; padding-left: 110px;">Mensagem: <br />{{{content}}}</p></td>
 		</tr>
-		{{#each feelings}}
+		{{#each monitor_feelings}}
 			<tr>
 				<td align="center" width="15%">
 					<img id="{{label}}" src="/images/{{label}}.png" alt="{{label}}" class="img-rounded img-responsive">
@@ -46,4 +45,5 @@
 			</tr>
 		{{/each}}
 	</table>
+	
 </template>

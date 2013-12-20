@@ -7,6 +7,7 @@ class window.AppRouter extends Backbone.Router
 		"message_feedback": "messageFeedback"
 		"message_feedback/:id": "parameterizedMessageFeedback"
 		"screen": "screen"
+		"feedback_monitor": "feedback_monitor"
 		"": "index"
 
 	newMessage: ->
@@ -33,3 +34,6 @@ class window.AppRouter extends Backbone.Router
 
 	index: ->
 		Session.set "current_page", "index"
+
+	feedback_monitor: ->
+		Session.set "current_page", "feedback_monitor"
