@@ -10,6 +10,9 @@ Template.new_message.events =
 			button = $("#post")
 			$("textarea[name=message]").notify "Digite o conteúdo do comunicado", "error"
 
+	"keydown textarea[name=subject]": (e) ->
+		false if e.keyCode == 13
+
 Template.new_message.com_date = ->
 	today = new Date
 	dd = today.getDate()
