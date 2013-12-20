@@ -6,6 +6,7 @@ pages = [
 	"message_feedback"
 	"screen"
 	"index"
+	"feedback_monitor"
 ]
 
 window.Helpers = {}
