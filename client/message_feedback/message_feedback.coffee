@@ -33,4 +33,7 @@ Template.show_message.feelings = ->
 	, 0
 
 	feelings.map (feeling) ->
-		{ label: feeling, percentage: message[feeling] / total * 100 }
+		if total * 100 != 0
+			{ label: feeling, percentage: message[feeling] / total * 100 }
+		else
+			{ label: feeling, percentage: 0 }
