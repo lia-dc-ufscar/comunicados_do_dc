@@ -11,7 +11,7 @@ pages = [
 window.Helpers = {}
 
 Handlebars.registerHelper "is_logged", ->
-	"true" == Session.get "logged"
+	Session.equals "logged", true
 
 Handlebars.registerHelper "is_logged_needed", ->
 	return true if "new_message" is Session.get "current_page"
