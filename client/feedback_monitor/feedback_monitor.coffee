@@ -32,6 +32,9 @@ Template.show_message_monitor.monitor_feelings = ->
 
 	monitor_feelings.map (monitor_feelings) ->
 		if total * 100 != 0
-			{ label: monitor_feelings, percentage: message[monitor_feelings] / total * 100, qtd: message[monitor_feelings], total: total }
+			percentage = message[monitor_feelings] / total * 100;
+			percentage = percentage.toFixed(2)
 		else
-			{ label: monitor_feelings, percentage: 0, qtd: 0, total: 0 }
+			percentage = 0
+		
+		{ label: monitor_feelings, percentage: percentage, qtd: message[monitor_feelings], total: total }

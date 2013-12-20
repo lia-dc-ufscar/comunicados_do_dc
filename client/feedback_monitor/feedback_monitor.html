@@ -7,19 +7,10 @@
 		<p>Loading</p>
 	{{/if}}
 
-	<br/>
-	<br/>
-	<center>
-		<a href="../feedback" name="back" class="btn btn-large my-btn-inverse btn-block" style="width: 85%; font-size: 30px;">Voltar</a>
-	</center>
-	<br/>
-	<br/>
-	<br/>
 </template>
 
 <template name="show_message_monitor">
 	<h1 align="center">Opiniões sobre o comunicado do dia {{{date}}}</h1>
-	<br />
 	<table width="85%" align="center">
 		<tr>
 			<td colspan="2" align="right"><p class="lead" style="font-size: 30px; text-align: justify; padding-left: 110px; ">Título:<br /> <b>{{{subject}}}</b></p></td>
@@ -39,9 +30,6 @@
 					</div>
 					<p align="center"><b>{{percentage}}% ({{qtd}} de {{total}})</b></p>
 				</td>
-			</tr>
-			<tr>
-				<td colspan=2>&nbsp;</td>
 			</tr>
 		{{/each}}
 	</table>
