@@ -10,7 +10,7 @@
 
 	<br/>
 	<br/>
-	<a href="../feedback" name="back" class="btn btn-large my-btn-inverse btn-block" style="width: 78%; margin: 0 175px; font-size: 30px;">Voltar</a>
+	<a href="../feedback" name="back" class="btn btn-large my-btn-inverse btn-block" style="width: 85%; margin: 0 175px; font-size: 30px;">Voltar</a>
 	<br/>
 	<br/>
 	<br/>
@@ -28,15 +28,15 @@
 		</tr>
 		{{#each feelings}}
 			<tr>
-				<td align="center" width="30%">
+				<td align="center" width="15%">
 					<img id="{{label}}" src="/images/{{label}}.png" alt="{{label}}" class="img-rounded img-responsive">
 				</td>
 				<td align="left" width="70%">
 					<div class="progress">
 						<div class="progress-bar" ariavalue-now="60" ariavalue-max="100" style="width: {{percentage}}%">
-							<span class="sr-only">60% complete</span>
 						</div>
 					</div>
+					<p align="center"><b>{{percentage}}%</b></p>
 				</td>
 			</tr>
 			<tr>
@@ -45,75 +45,3 @@
 		{{/each}}
 	</table>
 </template>
-
-
-<!-- Option 2 -->
-<!--<template name="message_feedback">
-	<br/>
-	<br/>
-
-	<h3 align="center">Confira o feedback dos funcionários</h3>
-
-	<br/>
-	<br/>
-
-	<table width="100%">
-		<tr>
-			<td colspan="5" align="center"><p class="lead">Vai trabalhar bando de...</p></td>
-		</tr>
-		<tr>
-			<td align="center">
-				<div class="customized-progress">
-					<div class="customized-progress-bar" ariavalue-now="60" ariavalue-max="100" style="height: 60%">
-						<span class="customized-sr-only">60% complete</span>
-					</div>
-				</div>
-			</td>
-			<td align="center">
-				<div class="customized-progress">
-					<div class="customized-progress-bar" ariavalue-now="80" ariavalue-max="100" style="height: 80%">
-						<span class="customized-sr-only">80% complete</span>
-					</div>
-				</div>
-			</td>
-			<td align="center">
-				<div class="customized-progress">
-					<div class="customized-progress-bar" ariavalue-now="15" ariavalue-max="100" style="height: 15%">
-						<span class="customized-sr-only">15% complete</span>
-					</div>
-				</div>
-			</td>
-			<td align="center">
-				<div class="customized-progress">
-					<div class="customized-progress-bar" ariavalue-now="94" ariavalue-max="100" style="height: 94%">
-						<span class="customized-sr-only">94% complete</span>
-					</div>
-				</div>
-			</td>
-			<td align="center">
-				<div class="customized-progress">
-					<div class="customized-progress-bar" ariavalue-now="8" ariavalue-max="100" style="height: 8%">
-						<span class="customized-sr-only">8% complete</span>
-					</div>
-				</div>
-			</td>
-		</tr>
-		<tr id="feelings">
-			<td align="center">
-				<img id="happy" src="/images/happy.png" alt="Happy" class="img-rounded img-responsive">
-			</td>
-			<td align="center">
-				<img id="medium_happy" src="/images/medium-happy.png" alt="Happy" class="img-rounded img-responsive">
-			</td>
-			<td align="center">
-				<img id="indiferent" src="/images/indiferent.png" alt="Happy" class="img-rounded img-responsive">
-			</td>
-			<td align="center">
-				<img id="medium_sad" src="/images/medium-sad.png" alt="Happy" class="img-rounded img-responsive">
-			</td>
-			<td align="center">
-				<img id="sad" src="/images/sad.png" alt="Happy" class="img-rounded img-responsive">
-			</td>
-		</tr>
-	</table>
-</template>-->
