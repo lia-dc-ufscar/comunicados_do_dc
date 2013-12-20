@@ -2,10 +2,10 @@ Template.feedback_monitor.message = ->
 	getLastMessage()
 
 Template.show_message_monitor.subject = ->
-	console.log getSelectedMessage()
+	getLastMessage().subject
 
 Template.show_message_monitor.content = ->
-	getSelectedMessage().content
+	getLastMessage().content
 
 Template.show_message_monitor.date = ->
 	current_message = getLastMessage().date
@@ -19,19 +19,19 @@ Template.show_message_monitor.date = ->
 	if ( mm < 10 )
 		mm = '0' + mm
 
-	console.log "asdas"
 	current_message = dd + '/' + mm + '/' + yyyy
 
-feelings = [ "happy", "medium_happy", "indiferent", "medium_sad", "sad" ]
+monitor_feelings = [ "happy", "medium_happy", "indiferent", "medium_sad", "sad" ]
 
-Template.show_message.feelings = ->
-	message = getSelectedMessage()
-	total = feelings.reduce (count, feeling) ->
-		count + message[feeling]
+Template.show_message_monitor.monitor_feelings = ->
+	console.log "adasd"
+	message = getLastMessage()
+	total = monitor_feelings.reduce (count, monitor_feelings) ->
+		count + message[monitor_feelings]
 	, 0
 
-	feelings.map (feeling) ->
+	monitor_feelings.map (monitor_feelings) ->
 		if total * 100 != 0
-			{ label: feeling, percentage: message[feeling] / total * 100 }
+			{ label: monitor_feelings, percentage: message[monitor_feelings] / total * 100, qtd: message[monitor_feelings], total: total }
 		else
-			{ label: feeling, percentage: 0 }
+			{ label: monitor_feelings, percentage: 0, qtd: message[monitor_feelings], total: total }
