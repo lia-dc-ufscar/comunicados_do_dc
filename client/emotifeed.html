@@ -27,7 +27,6 @@
 		{{> vote}}
 	{{/if}}
 
-	{{#if is_logged}}
 		{{#if is_new_message}}
 			{{> new_message}}
 		{{/if}}
@@ -40,11 +39,6 @@
 		{{#if is_home}}
 			{{> home}}
 		{{/if}}
-	{{else}}
-		{{#if is_logged_needed}}
-			{{> auth}}
-		{{/if}}
-	{{/if}}
 
 	{{#if is_screen}}
 		{{> screen}}
