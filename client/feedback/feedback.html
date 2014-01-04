@@ -1,21 +1,23 @@
 <template name="feedback">
-	<h1 style="text-align: center;">Comunicados anteriores</h1>
+	<h1 style="text-align: center;">Comunicados enviados</h1>
 	<div name="centralize-buttons" style="text-align: center; width: 100%;">
 		<p width="100%" style="font-size: 100%; text-align: center; margin: 0 auto;">(Toque no comunicado para saber as opiniões)</p>
 		<br />
 		{{#each messages}}
 			{{> message}}
 		{{/each}}
-		<a href="home" name="back" class="btn btn-large my-btn-inverse btn-home" style="margin: 0 auto; font-size: 100%;">Voltar</a>
+		<a href="home" name="back" class="btn btn-large my-btn-inverse btn-home" style="margin: 0 auto; font-size: 2em;">Voltar</a>
 	</div>
 </template>
 
 <template name="message">
+	
 	<div>
 	<p>Enviado dia {{{formattedDate}}}</p>
-	<a href="message_feedback/{{_id}}" class="btn btn-large btn-default btn-home">
-		<p width="100%" style="font-size: 100%; text-align: justify;">{{{subject}}}</p></a></div>
+	<a style="position=float" href="message_feedback/{{_id}}" class="btn btn-large btn-default btn-home" width="90%">
+		<p width="100%" style="font-size: 100%; text-align: justify;">{{{subject}}}</p>
+	</a>
+	</div>
 	<br />
-	<br />	
-	<br />
+
 </template>

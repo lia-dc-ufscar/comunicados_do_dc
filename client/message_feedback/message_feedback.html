@@ -10,27 +10,32 @@
 
 	<br/>
 	<br/>
+
 	<center>
-		<a href="../feedback" name="back" class="btn btn-large my-btn-inverse btn-block" style="width: 85%; font-size: 30px;">Voltar</a>
+		<a href="../feedback" name="back" class="btn btn-large my-btn-inverse btn-block" style="width: 85%; font-size: 2.5em;">Voltar</a>
 	</center>
 	<br/>
 	<br/>
 	<br/>
 </template>
 
-<template name="show_message">
-	<h1 align="center">Opiniões sobre o comunicado do dia {{{date}}}</h1>
+<template name="show_message" >
+	<h2 bgcolor="#efead5" align="center">Opiniões sobre o comunicado do dia {{{date}}}</h2>
 	<br />
-	<table width="85%" align="center">
+	<table width="80%" align="center" bgcolor="#efead5">
 		<tr>
-			<td colspan="2" align="right"><p class="lead" style="font-size: 30px; text-align: justify; padding-left: 110px; ">Título:<br /> <b>{{{subject}}}</b></p></td>
+			<td colspan="2" align="right" bgcolor="#efead5"><p class="lead" style="font-size: 2.5em; text-align: justify; padding-left: 110px; ">
+				<b>Título:</b><br /> {{{subject}}}</p>
+			</td>
 		</tr>
 		<tr>
-			<td colspan="2" align="right"><p class="lead" style="font-size: 30px; text-align: justify; padding-left: 110px;">Mensagem: <br />{{{content}}}</p></td>
+			<td colspan="2" align="right" bgcolor="#efead5"><p class="lead" style="font-size: 2.5em; text-align: justify; padding-left: 110px;">
+				<b>Mensagem: </b><br />{{{content}}}</p>
+			</td>
 		</tr>
 		{{#each feelings}}
-			<tr>
-				<td align="center" width="15%">
+			<tr bgcolor="#efead5">
+				<td align="center" width="10%" >
 					<img id="{{label}}" src="/images/{{label}}.png" alt="{{label}}" class="img-rounded img-responsive">
 				</td>
 				<td align="left" width="70%">
@@ -42,7 +47,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td colspan=2>&nbsp;</td>
+				<td bgcolor="#efead5" colspan=2>&nbsp;</td>
 			</tr>
 		{{/each}}
 	</table>

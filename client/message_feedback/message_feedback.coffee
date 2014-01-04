@@ -10,19 +10,26 @@ Template.show_message.content = ->
 window.getSelectedMessage = ->
 	Messages.findOne(Session.get("selected_message"))
 
+Template.deleteSelectedMessage = ->
+	Messages.remove(Session.get("selected_message"))
+
 Template.show_message.date = ->
 	current_message = getSelectedMessage().date
 
 	dd = current_message.getDate()
 	mm = current_message.getMonth() + 1
 	yyyy = current_message.getFullYear()
+	hh = current_message.getHours()
+	min = current_message.getMinutes()
 
 	if ( dd < 10 )
 		dd = '0' + dd 
 	if ( mm < 10 )
 		mm = '0' + mm
+	if ( min < 10 )
+		mm = '0' + min
 
-	current_message = dd + '/' + mm + '/' + yyyy;
+	current_message = dd + '/' + mm + '/' + yyyy + ' as ' + hh + ':' + min
 
 feelings = [ "happy", "medium_happy", "indiferent", "medium_sad", "sad" ]
 
