@@ -12,7 +12,7 @@ window.getSelectedMessage = ->
 
 Template.message_feedback.events =
 	"click .delete": (e) ->
-		Messages.remove(getSelectedMessage().id)
+		Messages.remove(getSelectedMessage()._id)
 
 Template.show_message.date = ->
 	current_message = getSelectedMessage().date
@@ -45,3 +45,11 @@ Template.show_message.feelings = ->
 			{ label: feeling, percentage: message[feeling] / total * 100, qtd: message[feeling], total: total }
 		else
 			{ label: feeling, percentage: 0, qtd: 0, total: 0 }
+
+Template.show_message.showTotal = ->
+	message = getSelectedMessage()
+	total = feelings.reduce (count, feeling) ->
+		count + message[feeling]
+	, 0
+
+	return total
