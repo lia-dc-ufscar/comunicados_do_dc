@@ -1,0 +1,11 @@
+things to do
+
+limit number of letters per line
+limit number of lines per messages
+limit mumber of letters on title
+
+OR
+
+resize letters according to message 
+
+delete messages

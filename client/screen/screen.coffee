@@ -6,6 +6,7 @@ window.getLastMessage = ->
 
 Template.screen.com_date = ->
 	today = new Date
+	console.log today
 	dd = today.getDate()
 	mm = today.getMonth() + 1
 	yyyy = today.getFullYear()
@@ -15,8 +16,11 @@ Template.screen.com_date = ->
 		dd = '0' + dd 
 	if ( mm < 10 )
 		mm = '0' + mm
+	if ( min < 10 )
+		min = '0' + min
 
 	today = dd + '/' + mm + '/' + yyyy + ' as ' + hh + ':' + min
+
 $ ->
 	$(window).on "keydown", (e) ->
 		return true if e.shiftKey || e.metaKey

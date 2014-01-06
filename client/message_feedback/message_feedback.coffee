@@ -10,8 +10,9 @@ Template.show_message.content = ->
 window.getSelectedMessage = ->
 	Messages.findOne(Session.get("selected_message"))
 
-Template.deleteSelectedMessage = ->
-	Messages.remove(Session.get("selected_message"))
+Template.message_feedback.events =
+	"click .delete": (e) ->
+		Messages.remove(getSelectedMessage().id)
 
 Template.show_message.date = ->
 	current_message = getSelectedMessage().date
