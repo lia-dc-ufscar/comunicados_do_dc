@@ -10,7 +10,7 @@
 
 	<br/>
 	<br/>
-	{{show_message}}
+
 	<center>
 		<a href="../feedback" class="delete btn my-btn-inverse" style="font-size: 2.5em; align: center;">Apagar</a>
 		<a href="../feedback" name="back" class="btn my-btn-inverse" style="font-size: 2.5em; align: center">Voltar</a>
@@ -51,5 +51,9 @@
 				<td bgcolor="#efead5" colspan=2>&nbsp;</td>
 			</tr>
 		{{/each}}
+			<tr>
+				<td bgcolor="#efead5" colspan=2 align="right">Total de votos: {{showTotal}}</td>
+			</tr>
 	</table>
+
 </template>
