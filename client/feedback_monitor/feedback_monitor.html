@@ -9,18 +9,14 @@
 
 </template>
 
-<template name="show_message_monitor">
-	<h1 align="center">Opiniões sobre o comunicado do dia {{{date}}}</h1>
-	<table width="85%" align="center">
-		<tr>
-			<td colspan="2" align="right"><p class="lead" style="font-size: 30px; text-align: justify; padding-left: 110px; ">Título:<br /> <b>{{{subject}}}</b></p></td>
-		</tr>
-		<tr>
-			<td colspan="2" align="right"><p class="lead" style="font-size: 30px; text-align: justify; padding-left: 110px;">Mensagem: <br />{{{content}}}</p></td>
-		</tr>
+<template name="show_message_monitor" >
+	<h2 bgcolor="#efead5" align="center">Opiniões sobre o comunicado</h2>
+	<br />
+	<table width="80%" align="center" bgcolor="#efead5">
+
 		{{#each monitor_feelings}}
-			<tr>
-				<td align="center" width="15%">
+			<tr bgcolor="#efead5">
+				<td align="center" width="10%" >
 					<img id="{{label}}" src="/images/{{label}}.png" alt="{{label}}" class="img-rounded img-responsive">
 				</td>
 				<td align="left" width="70%">
@@ -28,10 +24,16 @@
 						<div class="progress-bar" ariavalue-now="60" ariavalue-max="100" style="width: {{percentage}}%">
 						</div>
 					</div>
-					<p align="center"><b>{{percentage}}% ({{qtd}} de {{total}})</b></p>
+					<p align="center"><b>{{percentage}}% </b></p>
 				</td>
 			</tr>
+			<tr>
+				<td bgcolor="#efead5" colspan=2>&nbsp;</td>
+			</tr>
 		{{/each}}
+			<tr>
+				<td bgcolor="#efead5" colspan=2 align="right">Total de votos: {{showTotal}}</td>
+			</tr>
 	</table>
-	
+
 </template>

@@ -38,3 +38,11 @@ Template.show_message_monitor.monitor_feelings = ->
 			percentage = 0
 		
 		{ label: monitor_feelings, percentage: percentage, qtd: message[monitor_feelings], total: total }
+
+Template.show_message.showTotal = ->
+	message = getSelectedMessage()
+	total = feelings.reduce (count, feeling) ->
+		count + message[feeling]
+	, 0
+
+	return total
