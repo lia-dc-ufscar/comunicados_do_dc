@@ -22,34 +22,36 @@
 		</div>
 	</div>-->
 
-	
-	{{#if is_vote}}
-		{{> vote}}
+	{{#if is_auth}}
+		{{> auth}}
 	{{/if}}
 
-	
-		{{#if is_new_message}}
-			{{> new_message}}
-		{{/if}}
-		{{#if is_feedback}}
-			{{> feedback}}
-		{{/if}}
-		{{#if is_message_feedback}}
-			{{> message_feedback}}
-		{{/if}}
-		{{#if is_home}}
-			{{> home}}
-		{{/if}}
-		{{#if is_feedback_monitor}}
-			{{> feedback_monitor}}
-		{{/if}}
-	
+	{{#if is_home}}
+		{{> home}}
+	{{/if}}
+
+	{{#if is_new_message}}
+		{{> new_message}}
+	{{/if}}
+
+	{{#if is_feedback}}
+		{{> feedback}}
+	{{/if}}
+
+	{{#if is_message_feedback}}
+		{{> message_feedback}}
+	{{/if}}
 
 	{{#if is_screen}}
 		{{> screen}}
 	{{/if}}
-	{{#if is_index}}
-		{{> index}}
-	{{/if}}
+
+	{{#if is_vote}}
+		{{> vote}}
+	{{/if}}	
+
+	{{#if is_feedback_monitor}}
+		{{> feedback_monitor}}
+	{{/if}}	
 	
 </template>

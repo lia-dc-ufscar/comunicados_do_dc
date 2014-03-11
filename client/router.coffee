@@ -9,31 +9,46 @@ class window.AppRouter extends Backbone.Router
 		"screen": "screen"
 		"feedback_monitor": "feedback_monitor"
 		"": "screen"
+		"auth": "auth"
 
 	newMessage: ->
+		return unless @authenticated()
 		Session.set "current_page", "new_message"
 
 	vote: ->
 		Session.set "current_page", "vote"
 
 	feedback: ->
+		return unless @authenticated()
 		Session.set "current_page", "feedback"
 
 	home: ->
+		return unless @authenticated()
 		Session.set "current_page", "home"
 
 	messageFeedback: ->
+		return unless @authenticated()
 		Session.set "current_page", "message_feedback"
 
 	parameterizedMessageFeedback: (id) ->
+		return unless @authenticated()
 		Session.set "selected_message", id
 		Session.set "current_page", "message_feedback"
 
 	screen: ->
 		Session.set "current_page", "screen"
 
-	index: ->
-		Session.set "current_page", "index"
 
 	feedback_monitor: ->
 		Session.set "current_page", "feedback_monitor"
+
+	auth: ->
+		Session.set "current_page", "auth"
+
+	authenticated: =>
+		if Meteor.userId()
+			true
+		else
+			debugger
+			router.navigate "auth", {trigger: true}
+			false
