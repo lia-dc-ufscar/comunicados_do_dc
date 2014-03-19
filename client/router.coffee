@@ -10,6 +10,7 @@ class window.AppRouter extends Backbone.Router
 		"feedback_monitor": "feedback_monitor"
 		"": "screen"
 		"auth": "auth"
+		"logout":"logout"
 
 	newMessage: ->
 		return unless @authenticated()
@@ -45,10 +46,13 @@ class window.AppRouter extends Backbone.Router
 	auth: ->
 		Session.set "current_page", "auth"
 
+	logout: ->
+		Meteor.logout()
+		router.navigate "auth", {trigger: true}
+		
 	authenticated: =>
 		if Meteor.userId()
 			true
 		else
-			debugger
 			router.navigate "auth", {trigger: true}
 			false
