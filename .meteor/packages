@@ -5,9 +5,11 @@
 
 standard-app-packages
 autopublish
-insecure
 preserve-inputs
 underscore
 backbone
 bootstrap
 coffeescript
+accounts-base
+accounts-password
+insecure
